@@ -1,0 +1,75 @@
+This folder isn't linked to a project yet
+
+To create and deploy in one go, use: netlify deploy --create-site <SITE_NAME> --dir . --prod
+? What would you like to do? (Use arrow keys)
+❯ ⇄  Link this directory to an existing project 
+  +  Create & configure a new project [38D[38C[2K[1A[2K[1A[2K[G? What would you like to do? 
+  ⇄  Link this directory to an existing project 
+❯ +  Create & configure a new project [38D[38C[2K[1A[2K[1A[2K[G? What would you like to do? +  Create & configure a new project[64D[64C
+? Team: (Use arrow keys)
+❯ Rovel Web Design [19D[19C[2K[1A[2K[G? Team: Rovel Web Design[24D[24C
+? Project name (leave blank for a random name; you can change it later): [73D[73C[2K[G? Project name (leave blank for a random name; you can change it later): [73D[73C
+ ›   Warning: .netlify.app already exists. Please try a different slug.
+? Project name (leave blank for a random name; you can change it later): [73D[73C[2K[G? Project name (leave blank for a random name; you can change it later): s[74D[74C[2K[G? Project name (leave blank for a random name; you can change it later): sw[75D[75C[2K[G? Project name (leave blank for a random name; you can change it later): sw-[76D[76C[2K[G? Project name (leave blank for a random name; you can change it later): sw-a[77D[77C[2K[G? Project name (leave blank for a random name; you can change it later): sw-au[78D[78C[2K[G? Project name (leave blank for a random name; you can change it later): sw-aut[79D[79C[2K[G? Project name (leave blank for a random name; you can change it later): sw-auto
+[1A[0D[80C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-auto-[1A[8D[81C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-auto-p[1A[9D[82C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-auto-pi[1A[10D[83C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-auto-pit[1A[11D[84C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-auto-pitc[1A[12D[85C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-auto-pitch[1A[13D[86C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-auto-pitch[1A[13D[86C
+[1B ›   Warning: sw-auto-pitch.netlify.app already exists. Please try a different slug.
+? Project name (leave blank for a random name; you can change it later): [73D[73C[2K[G? Project name (leave blank for a random name; you can change it later): s[74D[74C[2K[G? Project name (leave blank for a random name; you can change it later): so[75D[75C[2K[G? Project name (leave blank for a random name; you can change it later): sou[76D[76C[2K[G? Project name (leave blank for a random name; you can change it later): sout[77D[77C[2K[G? Project name (leave blank for a random name; you can change it later): south[78D[78C[2K[G? Project name (leave blank for a random name; you can change it later): southw[79D[79C[2K[G? Project name (leave blank for a random name; you can change it later): southwo
+[1A[0D[80C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwoo[1A[8D[81C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood[1A[9D[82C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-[1A[10D[83C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-c[1A[11D[84C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-ca[1A[12D[85C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-cal[1A[13D[86C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-calg[1A[14D[87C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-calga[1A[15D[88C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-calgar[1A[16D[89C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-calgary[1A[17D[90C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-calgary-[1A[18D[91C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-calgary-7[1A[19D[92C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-calgary-78[1A[20D[93C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-calgary-789[1A[21D[94C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-calgary-789[1A[21D[94C
+[1B ›   Warning: southwood-calgary-789.netlify.app already exists. Please try a different slug.
+? Project name (leave blank for a random name; you can change it later): [73D[73C[2K[G? Project name (leave blank for a random name; you can change it later): s[74D[74C[2K[G? Project name (leave blank for a random name; you can change it later): so[75D[75C[2K[G? Project name (leave blank for a random name; you can change it later): sou[76D[76C[2K[G? Project name (leave blank for a random name; you can change it later): sout[77D[77C[2K[G? Project name (leave blank for a random name; you can change it later): south[78D[78C[2K[G? Project name (leave blank for a random name; you can change it later): southw[79D[79C[2K[G? Project name (leave blank for a random name; you can change it later): southwo
+[1A[0D[80C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwoo[1A[8D[81C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood[1A[9D[82C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-[1A[10D[83C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-e[1A[11D[84C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-el[1A[12D[85C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-eli[1A[13D[86C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elit[1A[14D[87C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite[1A[15D[88C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite-[1A[16D[89C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite-a[1A[17D[90C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite-au[1A[18D[91C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite-aut[1A[19D[92C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite-auto[1A[20D[93C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite-autos[1A[21D[94C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite-autosh[1A[22D[95C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite-autosho[1A[23D[96C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite-autoshop[1A[24D[97C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+southwood-elite-autoshop[1A[24D[97C
+[1B ›   Warning: southwood-elite-autoshop.netlify.app already exists. Please try a different slug.
+? Project name (leave blank for a random name; you can change it later): [73D[73C[2K[G? Project name (leave blank for a random name; you can change it later): s[74D[74C[2K[G? Project name (leave blank for a random name; you can change it later): sw[75D[75C[2K[G? Project name (leave blank for a random name; you can change it later): sw-[76D[76C[2K[G? Project name (leave blank for a random name; you can change it later): sw-x[77D[77C[2K[G? Project name (leave blank for a random name; you can change it later): sw-xy[78D[78C[2K[G? Project name (leave blank for a random name; you can change it later): sw-xyz[79D[79C[2K[G? Project name (leave blank for a random name; you can change it later): sw-xyz-
+[1A[0D[80C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-xyz-9[1A[8D[81C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-xyz-99[1A[9D[82C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-xyz-999[1A[10D[83C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-xyz-999-[1A[11D[84C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-xyz-999-f[1A[12D[85C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-xyz-999-fi[1A[13D[86C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-xyz-999-fin[1A[14D[87C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-xyz-999-fina[1A[15D[88C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-xyz-999-final[1A[16D[89C[1B[2K[1A[2K[G? Project name (leave blank for a random name; you can change it later): 
+sw-xyz-999-final[1A[16D[89C
+[1B ›   Warning: sw-xyz-999-final.netlify.app already exists. Please try a different slug.
+? Project name (leave blank for a random name; you can change it later): [73D[73C

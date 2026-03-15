@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | Southwood Automotive Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --dark: #1A1A2E;
+            --light: #F7F7FF;
+            --accent: #00C9A7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-nav {
+            background: linear-gradient(135deg, var(--primary), #FF8C5A);
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+        }
+
+        .cta-nav::after {
+            display: none;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 10rem 5% 6rem;
+            background: linear-gradient(135deg, var(--secondary), #001C3D);
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Pricing Section */
+        .pricing-intro {
+            padding: 4rem 5%;
+            background: white;
+            text-align: center;
+        }
+
+        .pricing-intro h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-intro p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Tables */
+        .pricing-section {
+            padding: 4rem 5%;
+            background: var(--light);
+        }
+
+        .pricing-category {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, var(--secondary), #003A6A);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .category-header h3 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-table {
+            padding: 2rem;
+        }
+
+        .pricing-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .pricing-row:hover {
+            background: var(--light);
+        }
+
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+
+        .service-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .service-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        .price {
+            text-align: right;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Packages Section */
+        .packages-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .packages-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-card.featured {
+            background: linear-gradient(135deg, var(--secondary), #003A6A);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .package-card.featured .package-name,
+        .package-card.featured .package-price,
+        .package-card.featured .package-features li {
+            color: white;
+        }
+
+        .package-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .package-name {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .package-price {
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            padding: 0.8rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #FF8C5A);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--secondary);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Disclaimer Section */
+        .disclaimer {
+            padding: 3rem 5%;
+            background: var(--light);
+            text-align: center;
+        }
+
+        .disclaimer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .disclaimer-content h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .disclaimer-content p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--secondary), #001C3D);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 968px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .pricing-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .price {
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Southwood<span>Auto</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="index.html#contact" class="cta-nav">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Transparent Pricing</h1>
+        <p>Fair, honest pricing with no hidden fees or surprises</p>
+    </section>
+
+    <section class="pricing-intro">
+        <h2>Know Before You Go</h2>
+        <p>We believe in complete transparency. Here are our most common services and their typical costs. Every vehicle is different, so call us for an exact quote tailored to your needs.</p>
+    </section>
+
+    <section class="pricing-section">
+        <div class="pricing-category">
+            <div class="category-header">
+                <h3>🛢️ Maintenance Services</h3>
+            </div>
+            <div class="pricing-table">
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Conventional Oil Change</div>
+                        <div class="service-description">Up to 5L oil, filter, multi-point inspection</div>
+                    </div>
+                    <div class="price">$49.99</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Synthetic Oil Change</div>
+                        <div class="service-description">Premium synthetic oil, filter, inspection</div>
+                    </div>
+                    <div class="price">$79.99</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Tire Rotation & Balance</div>
+                        <div class="service-description">All four tires rotated and balanced</div>
+                    </div>
+                    <div class="price">$59.99</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Wheel Alignment</div>
+                        <div class="service-description">4-wheel computerized alignment</div>
+                    </div>
+                    <div class="price">$99.99</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Air Filter Replacement</div>
+                        <div class="service-description">Engine air filter</div>
+                    </div>
+                    <div class="price">$39.99</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-category">
+            <div class="category-header">
+                <h3>🔍 Diagnostics & Inspection</h3>
+            </div>
+            <div class="pricing-table">
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Computer Diagnostics</div>
+                        <div class="service-description">Full system scan and code reading</div>
+                    </div>
+                    <div class="price">$89.99</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Pre-Purchase Inspection</div>
+                        <div class="service-description">Comprehensive 150-point inspection</div>
+                    </div>
+                    <div class="price">$149.99</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Multi-Point Inspection</div>
+                        <div class="service-description">Complimentary with oil change</div>
+                    </div>
+                    <div class="price">FREE</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-category">
+            <div class="category-header">
+                <h3>🛑 Brake Services</h3>
+            </div>
+            <div class="pricing-table">
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Brake Pad Replacement (Front)</div>
+                        <div class="service-description">Premium pads, hardware, inspection</div>
+                    </div>
+                    <div class="price">From $179</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Brake Pad Replacement (Rear)</div>
+                        <div class="service-description">Premium pads, hardware, inspection</div>
+                    </div>
+                    <div class="price">From $199</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Brake Fluid Flush</div>
+                        <div class="service-description">Complete system flush and refill</div>
+                    </div>
+                    <div class="price">$99.99</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Rotor Resurfacing (Per Axle)</div>
+                        <div class="service-description">Machine rotors to factory spec</div>
+                    </div>
+                    <div class="price">$89.99</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-category">
+            <div class="category-header">
+                <h3>❄️ Climate Control</h3>
+            </div>
+            <div class="pricing-table">
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">AC System Recharge</div>
+                        <div class="service-description">Refrigerant refill, leak check</div>
+                    </div>
+                    <div class="price">$129.99</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">AC System Diagnosis</div>
+                        <div class="service-description">Full system inspection and testing</div>
+                    </div>
+                    <div class="price">$89.99</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Coolant Flush</div>
+                        <div class="service-description">System flush and refill</div>
+                    </div>
+                    <div class="price">$119.99</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-category">
+            <div class="category-header">
+                <h3>⚡ Electrical Services</h3>
+            </div>
+            <div class="pricing-table">
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Battery Test</div>
+                        <div class="service-description">Load test and charging system check</div>
+                    </div>
+                    <div class="price">FREE</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Battery Replacement</div>
+                        <div class="service-description">Premium battery, installation, disposal</div>
+                    </div>
+                    <div class="price">From $149</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Alternator Replacement</div>
+                        <div class="service-description">Parts and labor</div>
+                    </div>
+                    <div class="price">From $399</div>
+                </div>
+                <div class="pricing-row">
+                    <div>
+                        <div class="service-name">Starter Replacement</div>
+                        <div class="service-description">Parts and labor</div>
+                    </div>
+                    <div class="price">From $349</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="packages-section">
+        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+            <h2 style="font-size: 3rem; color: var(--secondary); margin-bottom: 1rem;">Maintenance Packages</h2>
+            <p style="font-size: 1.1rem; color: #666;">Save money with our comprehensive maintenance bundles</p>
+        </div>
+        <div class="packages-grid">
+            <div class="package-card">
+                <div class="package-name">Basic Care</div>
+                <div class="package-price">$149</div>
+                <ul class="package-features">
+                    <li>Synthetic oil change</li>
+                    <li>Tire rotation</li>
+                    <li>Multi-point inspection</li>
+                    <li>Fluid level check & top-up</li>
+                    <li>Battery test</li>
+                </ul>
+                <a href="index.html#contact" class="btn">Book Now</a>
+            </div>
+
+            <div class="package-card featured">
+                <div class="package-badge">MOST POPULAR</div>
+                <div class="package-name">Complete Care</div>
+                <div class="package-price">$299</div>
+                <ul class="package-features">
+                    <li>Everything in Basic Care</li>
+                    <li>Brake inspection & adjustment</li>
+                    <li>Coolant flush</li>
+                    <li>Air filter replacement</li>
+                    <li>Cabin filter replacement</li>
+                    <li>Tire pressure monitoring</li>
+                    <li>Wiper blade replacement</li>
+                </ul>
+                <a href="index.html#contact" class="btn btn-white">Book Now</a>
+            </div>
+
+            <div class="package-card">
+                <div class="package-name">Premium Care</div>
+                <div class="package-price">$499</div>
+                <ul class="package-features">
+                    <li>Everything in Complete Care</li>
+                    <li>Transmission service</li>
+                    <li>Differential service</li>
+                    <li>Power steering flush</li>
+                    <li>Fuel system cleaning</li>
+                    <li>Complete undercarriage inspection</li>
+                    <li>Priority scheduling</li>
+                </ul>
+                <a href="index.html#contact" class="btn">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="disclaimer">
+        <div class="disclaimer-content">
+            <h3>💡 Pricing Notes</h3>
+            <p><strong>Prices are estimates and may vary based on:</strong> Vehicle make/model, part availability, labor requirements, and additional services needed. All prices subject to applicable taxes. Major repairs will receive a detailed written quote before work begins. Diagnostic fees may be waived if repair is performed. We use quality OEM or premium aftermarket parts. Ask about our warranties and guarantees.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Get an Exact Quote</h2>
+            <p>Call us for a personalized estimate tailored to your vehicle and needs.</p>
+            <a href="index.html#contact" class="btn">Contact Us Today</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="testimonials.html">Testimonials</a>
+            </div>
+            <p>&copy; 2026 Southwood Automotive Ltd. All rights reserved.</p>
+            <p style="margin-top: 1rem; color: rgba(255,255,255,0.5);">11029 Elbow Dr SW, Calgary, AB T2W 1G7 | (587) 352-9990</p>
+        </div>
+    </footer>
+</body>
+</html>

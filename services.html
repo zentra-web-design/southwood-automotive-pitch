@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Southwood Automotive Ltd</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --dark: #1A1A2E;
+            --light: #F7F7FF;
+            --accent: #00C9A7;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-nav {
+            background: linear-gradient(135deg, var(--primary), #FF8C5A);
+            color: white !important;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+        }
+
+        .cta-nav::after {
+            display: none;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 10rem 5% 6rem;
+            background: linear-gradient(135deg, var(--secondary), #001C3D);
+            text-align: center;
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 6rem 5%;
+            background: white;
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .service-detail {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-detail:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-header h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-body {
+            padding: 2rem;
+        }
+
+        .service-body p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .service-features {
+            list-style: none;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #666;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .price-tag {
+            background: var(--light);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .price-tag strong {
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Emergency Section */
+        .emergency-section {
+            padding: 4rem 5%;
+            background: var(--light);
+            text-align: center;
+        }
+
+        .emergency-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .emergency-content h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .emergency-content p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .emergency-contact {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #FF8C5A);
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 1.5rem 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--secondary), #001C3D);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), #FF8C5A);
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 968px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Southwood<span>Auto</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="index.html#contact" class="cta-nav">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Our Services</h1>
+        <p>Comprehensive automotive care for all makes and models</p>
+    </section>
+
+    <section class="services-section">
+        <div class="services-grid">
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">🛢️</div>
+                    <h3>Oil Changes & Lubrication</h3>
+                </div>
+                <div class="service-body">
+                    <p>Regular oil changes are crucial for engine health. We use premium synthetic or conventional oils based on your vehicle's needs.</p>
+                    <ul class="service-features">
+                        <li>Complete oil & filter change</li>
+                        <li>Multi-point inspection</li>
+                        <li>Fluid level check</li>
+                        <li>Tire pressure adjustment</li>
+                        <li>Premium oil options available</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>Starting from $49.99</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">🛑</div>
+                    <h3>Brake Service & Repair</h3>
+                </div>
+                <div class="service-body">
+                    <p>Your safety depends on properly functioning brakes. We inspect, service, and repair all brake components.</p>
+                    <ul class="service-features">
+                        <li>Brake pad replacement</li>
+                        <li>Rotor resurfacing or replacement</li>
+                        <li>Caliper service</li>
+                        <li>Brake fluid flush</li>
+                        <li>ABS diagnostics</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>Contact for quote</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">🔍</div>
+                    <h3>Engine Diagnostics</h3>
+                </div>
+                <div class="service-body">
+                    <p>Advanced computer diagnostics to identify issues quickly and accurately. We have the latest diagnostic equipment.</p>
+                    <ul class="service-features">
+                        <li>Check engine light diagnosis</li>
+                        <li>Computer system scanning</li>
+                        <li>Sensor testing</li>
+                        <li>Performance analysis</li>
+                        <li>Detailed diagnostic report</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>$89.99 diagnostic fee</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Transmission Service</h3>
+                </div>
+                <div class="service-body">
+                    <p>Keep your transmission running smoothly with regular service and expert repairs when needed.</p>
+                    <ul class="service-features">
+                        <li>Transmission fluid change</li>
+                        <li>Filter replacement</li>
+                        <li>Transmission repair</li>
+                        <li>Clutch replacement</li>
+                        <li>Performance testing</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>Service from $149.99</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">⚡</div>
+                    <h3>Electrical Systems</h3>
+                </div>
+                <div class="service-body">
+                    <p>Modern vehicles have complex electrical systems. Our technicians are experts in electrical diagnostics and repair.</p>
+                    <ul class="service-features">
+                        <li>Battery testing & replacement</li>
+                        <li>Alternator service</li>
+                        <li>Starter repair</li>
+                        <li>Wiring repair</li>
+                        <li>Lighting systems</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>Contact for estimate</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">🔧</div>
+                    <h3>Suspension & Steering</h3>
+                </div>
+                <div class="service-body">
+                    <p>Smooth, safe handling starts with a properly maintained suspension system.</p>
+                    <ul class="service-features">
+                        <li>Shock & strut replacement</li>
+                        <li>Wheel alignment</li>
+                        <li>Steering system repair</li>
+                        <li>Ball joint replacement</li>
+                        <li>Control arm service</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>Alignment from $99.99</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">❄️</div>
+                    <h3>Air Conditioning & Heating</h3>
+                </div>
+                <div class="service-body">
+                    <p>Stay comfortable year-round with properly functioning climate control systems.</p>
+                    <ul class="service-features">
+                        <li>AC system diagnosis</li>
+                        <li>Refrigerant recharge</li>
+                        <li>Compressor replacement</li>
+                        <li>Heater core repair</li>
+                        <li>Blower motor service</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>AC recharge from $129.99</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">🚗</div>
+                    <h3>Tire Services</h3>
+                </div>
+                <div class="service-body">
+                    <p>From new tire sales to seasonal changeovers, we handle all your tire needs.</p>
+                    <ul class="service-features">
+                        <li>New tire sales & installation</li>
+                        <li>Seasonal tire changeover</li>
+                        <li>Tire rotation & balancing</li>
+                        <li>Flat tire repair</li>
+                        <li>TPMS service</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>Rotation from $39.99</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">🔥</div>
+                    <h3>Engine Repair</h3>
+                </div>
+                <div class="service-body">
+                    <p>From minor tune-ups to major overhauls, our technicians handle all engine work.</p>
+                    <ul class="service-features">
+                        <li>Tune-ups & maintenance</li>
+                        <li>Timing belt replacement</li>
+                        <li>Head gasket repair</li>
+                        <li>Engine overhaul</li>
+                        <li>Performance upgrades</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>Tune-up from $199.99</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">💨</div>
+                    <h3>Exhaust Systems</h3>
+                </div>
+                <div class="service-body">
+                    <p>Ensure optimal performance and pass emissions tests with proper exhaust maintenance.</p>
+                    <ul class="service-features">
+                        <li>Muffler replacement</li>
+                        <li>Catalytic converter service</li>
+                        <li>Exhaust pipe repair</li>
+                        <li>Emissions testing prep</li>
+                        <li>Performance exhaust</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>Contact for estimate</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">🌟</div>
+                    <h3>Preventive Maintenance</h3>
+                </div>
+                <div class="service-body">
+                    <p>Stay ahead of problems with regular maintenance packages tailored to your vehicle.</p>
+                    <ul class="service-features">
+                        <li>Complete vehicle inspection</li>
+                        <li>Scheduled maintenance</li>
+                        <li>Fluid services</li>
+                        <li>Filter replacements</li>
+                        <li>Safety checks</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>Packages from $99.99</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-detail">
+                <div class="service-header">
+                    <div class="service-icon">🔴</div>
+                    <h3>Pre-Purchase Inspections</h3>
+                </div>
+                <div class="service-body">
+                    <p>Buying a used vehicle? Get peace of mind with our comprehensive pre-purchase inspection.</p>
+                    <ul class="service-features">
+                        <li>Complete mechanical inspection</li>
+                        <li>Computer diagnostics</li>
+                        <li>Detailed written report</li>
+                        <li>Photos of concerns</li>
+                        <li>Fair market assessment</li>
+                    </ul>
+                    <div class="price-tag">
+                        <strong>$149.99</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="emergency-section">
+        <div class="emergency-content">
+            <h2>Need Service Today?</h2>
+            <p>Call us now for same-day service on most repairs. Our team is ready to help.</p>
+            <div class="emergency-contact">(587) 352-9990</div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Don't See What You Need?</h2>
+            <p>We handle a wide range of automotive services. Give us a call to discuss your specific needs.</p>
+            <a href="pricing.html" class="btn">View Pricing Guide</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="testimonials.html">Testimonials</a>
+            </div>
+            <p>&copy; 2026 Southwood Automotive Ltd. All rights reserved.</p>
+            <p style="margin-top: 1rem; color: rgba(255,255,255,0.5);">11029 Elbow Dr SW, Calgary, AB T2W 1G7 | (587) 352-9990</p>
+        </div>
+    </footer>
+</body>
+</html>
